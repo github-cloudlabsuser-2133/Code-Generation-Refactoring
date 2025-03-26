@@ -1,4 +1,4 @@
-const apiKey = '10ef3cbf2386a4c87620efd0df99ecfb'; // Replace with your OpenWeatherMap API key
+const apiKey = '888ae371c0f61f55971d752c22733538'; // Replace with your OpenWeatherMap API key
 
         document.getElementById('getWeather').addEventListener('click', async () => {
             const city = document.getElementById('city').value;
@@ -12,7 +12,7 @@ const apiKey = '10ef3cbf2386a4c87620efd0df99ecfb'; // Replace with your OpenWeat
             try {
                 const response = await fetch(url);
                 if (!response.ok) {
-                    throw new Error('City not found');
+                    throw new Error('City not found', response.status);
                 }
 
                 const data = await response.json();
